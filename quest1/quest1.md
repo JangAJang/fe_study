@@ -32,11 +32,11 @@
 
 - 초기에 이런 방식으로 상품을 읽어와야 한다
 
-<img width="304" alt="스크린샷 2024-06-16 21 02 46" src="https://github.com/JangAJang/fe_study/assets/99702271/ff2fbd47-e2cf-4d42-a794-1f1cfd62ddc6">
+<img width="307" alt="스크린샷 2024-06-16 21 04 16" src="https://github.com/JangAJang/fe_study/assets/99702271/7b8587b9-ba1c-4228-8ac4-e13c1b918d84">
 
 - 존재하는 상품을 주문하면 이런 방식으로 처리해야 한다.
   
-<img width="307" alt="스크린샷 2024-06-16 21 04 16" src="https://github.com/JangAJang/fe_study/assets/99702271/7b8587b9-ba1c-4228-8ac4-e13c1b918d84">
+<img width="284" alt="스크린샷 2024-06-16 21 06 03" src="https://github.com/JangAJang/fe_study/assets/99702271/ee3df4aa-4e59-4cf1-b8ea-c70270b79e16">
 
 - 존재하지 않는 상품을 주문하면 이런 방식으로 예외를 출력해준다.
 
