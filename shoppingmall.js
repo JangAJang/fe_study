@@ -19,5 +19,19 @@ export class ShoppingMall {
 		}
 	}
 
+	cleanItems(it){
+		let count=0;
+		Object.entries(this.items).forEach(([name, price]) => {
+			if (it===name){
+				console.log(`${it}: 아이템이 판매되었습니다.`);
+				count+=1;
+				delete this.items[it];
+			}
+		});
+		if (count===0){
+			console.log('해당 아이템은 존재하지 않습니다.');
+		}
+	}
+
 }
 

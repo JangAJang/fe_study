@@ -1,6 +1,7 @@
 // view.js
 import fs from "fs";
 import readline from 'readline';
+import { ShoppingMall } from "./shoppingmall.js";
 
 const r1 = readline.createInterface({ // 입출력을 위한 인터페이스를 생성
 	input: process.stdin,
@@ -18,6 +19,7 @@ export class View {
       });
     }
 
+    a
 
     callItems() {
       return new Promise(function(resolve, reject) {
@@ -35,23 +37,15 @@ export class View {
       });
     }
 
-    
 
-    checkproduct(items){
-      let count=0
-      this.callItems()
-      .then((value)=>{
-        Object.entries(items).forEach(([name, price]) => {
-          if (value===name){
-            console.log(`${value}: 아이템이 판매되었습니다.`);
-            count+=1;
-          }
-        });
-        if (count===0){
-          console.log('해당 아이템은 존재하지 않습니다.');
-        }
-      })
+
+    async checkproduct(items){
+      try{
+        return await this.callItems();
+      } catch{
+        return 'error!'
       }
+      } 
 
     
     
