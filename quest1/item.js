@@ -3,4 +3,8 @@ export class Item {
     this.name = name;
     this.price = price;
   }
+
+  getData() {
+    return `${this.name} : ${this.price}`;
+  }
 }
