@@ -1,5 +1,6 @@
 // shoppingmall.js
 import fs from "fs";
+import { Item } from "./item.js";
 
 export class ShoppingMall {
   constructor() {
@@ -17,9 +18,9 @@ export class ShoppingMall {
   }
 
   cleanItems(it) {
-    for (const [name, price] of Object.entries(this.items)) {
-      if (it === name) {
-        console.log(`${it}: 아이템이 판매되었습니다.`);
+    for (const [name] of Object.entries(this.items)) {
+      if (name === it) {
+        console.log(`${it}: 상품이 판매되었습니다.`);
         delete this.items[it];
         return;
       }

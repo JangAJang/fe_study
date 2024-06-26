@@ -1,0 +1,7 @@
+
+Feat: q1 5차 제출
+
+js코드를 ts코드로 변환하였음. item.ts 파일도 적용하였다.
+
+* js코드를 ts코드로 변환하는 과정에서 item.ts를 사용하는 방법을 알게 되었다. ts에서는 변수의 타입을 선언해주어야 하고 그 타입을 item.ts로 선언해줌으로써 shoppingmall.items의 타입을 item과 동일하게 설정할 수 있었다.
+* javascript에서 fineIndex라는 배열 관련 함수를 이용해서 상품의 판매여부에 관한 코드를 좀 더 간결하게 작성할 수 있었다.
