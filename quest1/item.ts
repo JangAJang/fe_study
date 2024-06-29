@@ -1,5 +1,8 @@
 export class Item {
-  constructor(name, price) {
+  readonly name: string;
+  readonly price: string;
+
+  constructor(name: string, price: string) {
     this.name = name;
     this.price = price;
   }
