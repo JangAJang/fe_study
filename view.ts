@@ -10,14 +10,19 @@ const r1 = readline.createInterface({
 });
 
 export class View {
-  // 주문 가능한 상품 목록 출력 함수
-  displayAvailableItems(items: Item[]):void {
-    let count:number = 1;
-    console.log("주문 가능한 상품:");
+
+  show_list(count:number,items:Item[]):void {
     Object.entries(items).forEach(([name, price]) => {
       console.log(`${count}. ${name}: ${price}원`);
       count++;
     });
+  }
+
+  // 주문 가능한 상품 목록 출력 함수
+  displayAvailableItems(items: Item[]):void {
+    let count:number = 1;
+    console.log("주문 가능한 상품:");
+    this.show_list(count,items);
   }
 
   callItems() {

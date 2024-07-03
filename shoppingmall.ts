@@ -2,10 +2,8 @@
 import * as fs from 'fs';
 
 import {Item} from './item';
-
 export class ShoppingMall {
   items : Item[];
-
   constructor() {
     this.items= this.loadItems(); // loadItems() 메서드 이용하여 json파일의 데이터를 받아옴
   }
