@@ -11,7 +11,7 @@ const r1 = readline.createInterface({
 
 export class View {
 
-  show_list(count:number,items:Item[]):void {
+  showList(count:number,items:Item[]):void {
     Object.entries(items).forEach(([name, price]) => {
       console.log(`${count}. ${name}: ${price}원`);
       count++;
@@ -22,7 +22,7 @@ export class View {
   displayAvailableItems(items: Item[]):void {
     let count:number = 1;
     console.log("주문 가능한 상품:");
-    this.show_list(count,items);
+    this.showList(count,items);
   }
 
   callItems() {
@@ -41,7 +41,7 @@ export class View {
     });
   }
 
-  async checkproduct():Promise<string> {
+  async checkProduct():Promise<string> {
     try {
       return await this.callItems();
     } catch {

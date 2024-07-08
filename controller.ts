@@ -13,7 +13,7 @@ s_view.displayAvailableItems(shoppingMall.items);
 
 async function process(){
   while (1) {
-    let it:string = await s_view.checkproduct();
+    let it:string = await s_view.checkProduct();
     shoppingMall.cleanItems(it);
     s_view.displayAvailableItems(shoppingMall.items);
   
