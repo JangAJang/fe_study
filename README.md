@@ -5,3 +5,4 @@
 ## Quests
 
 - [Quest1](/quest1/quest1.md)
+- [Quest2](/quest2/quest2.md)
