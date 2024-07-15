@@ -1,8 +1,8 @@
-import fs from "fs";
 import { Item } from "./item.js";
+import * as fs from "fs";
 
 export class ShoppingMall {
-  items;
+  readonly items: Item[];
 
   constructor() {
     const dataJson = JSON.parse(
@@ -14,17 +14,14 @@ export class ShoppingMall {
     );
   }
 
-  containsItem(name) {
-    return this.items.filter((each) => each.name === name).length > 0;
-  }
+  sellItem(name: string) {
+    const itemIndex = this.items.findIndex((item) => item.name === name);
 
-  sellItem(name) {
-    if (this.containsItem(name)) {
-      this.items = this.items.filter((each) => each.name !== name);
-      return;
+    if (itemIndex === -1) {
+      throw Error("아이템이 존재하지 않습니다.");
     }
 
-    throw Error("아이템이 존재하지 않습니다.");
+    this.items.splice(itemIndex, 1);
   }
 
   getItemDatas() {
