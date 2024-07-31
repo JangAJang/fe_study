@@ -6,6 +6,8 @@ const r1 = readline.createInterface({
   output: process.stdout,
 });
 
+let count = 1;
+
 export class View {
   show_list(count, items) {
     Object.entries(items).forEach(([name, price]) => {
@@ -16,7 +18,6 @@ export class View {
 
   // 주문 가능한 상품 목록 출력 함수
   displayAvailableItems(items) {
-    let count = 1;
     console.log("주문 가능한 상품:");
     this.show_list(count, items);
   }

@@ -9,6 +9,8 @@ const r1 = readline.createInterface({
   output: process.stdout,
 });
 
+let count:number = 1;
+
 export class View {
 
   showList(count:number,items:Item[]):void {
@@ -20,7 +22,6 @@ export class View {
 
   // 주문 가능한 상품 목록 출력 함수
   displayAvailableItems(items: Item[]):void {
-    let count:number = 1;
     console.log("주문 가능한 상품:");
     this.showList(count,items);
   }
