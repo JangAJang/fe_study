@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crolling_HomePage</title>
+    <style>
+        .newsDiv {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .titleDiv {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .preDiv {
+            color: #555;
+        }
+        .whereDiv {
+            color: #999;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Naver IT/Science News</h1>
+    <div id="news-container">Loading data...</div>
+
+    <script>
+        async function fetchData() {
+            try {
+                const response = await fetch('http://localhost:3000/get-data');
+                const data = await response.json(); // JSON으로 직접 파싱
+
+                if (Array.isArray(data)) {
+                    const container = document.getElementById('news-container');
+                    container.innerHTML = ''; // 초기화
+
+                    data.forEach(item => {
+                        const newsDiv = document.createElement('div');
+                        newsDiv.className = 'newsDiv';
+
+                        const titleDiv = document.createElement('div');
+                        titleDiv.className = 'titleDiv';
+                        titleDiv.innerText = item.title;
+
+                        const preDiv = document.createElement('div');
+                        preDiv.className = 'preDiv';
+                        preDiv.innerText = item.preview;
+
+                        const whereDiv = document.createElement('div');
+                        whereDiv.className = 'whereDiv';
+                        whereDiv.innerText = item.where;
+
+                        newsDiv.appendChild(titleDiv);
+                        newsDiv.appendChild(preDiv);
+                        newsDiv.appendChild(whereDiv);
+                        container.appendChild(newsDiv);
+                    });
+                } else {
+                    throw new Error('Invalid data format');
+                }
+            } catch (error) {
+                document.getElementById('news-container').innerText = 'Failed to load data';
+                console.error('Error fetching data:', error);
+            }
+        }
+
+        fetchData();
+    </script>
+</body>
+</html>
